@@ -23,15 +23,6 @@ $(call inherit-product, device/xiaomi/dipper/device.mk)
 $(call inherit-product-if-exists, vendor/xiaomi/dipper/dipper-vendor.mk)
 $(call inherit-product-if-exists, vendor/xiaomi/sdm845-common/sdm845-common-vendor.mk)
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.ringtone=Ring_Synth_04.ogg \
-    ro.com.android.dataroaming=true \
-
-PRODUCT_PACKAGES += \
-    PhotoTable \
-    WallpaperPicker \
-    WAPPushManager \
-
 # STOPSHIP deal with Qualcomm stuff later
 # PRODUCT_RESTRICT_VENDOR_FILES := all
 
@@ -40,6 +31,3 @@ PRODUCT_BRAND := Android
 PRODUCT_NAME := aosp_dipper
 PRODUCT_DEVICE := dipper
 PRODUCT_MODEL := AOSP on dipper
-
-PRODUCT_COPY_FILES += \
-    device/sample/etc/apns-full-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
