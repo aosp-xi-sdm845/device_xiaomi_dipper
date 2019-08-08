@@ -6,6 +6,14 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+    LOCAL_KERNEL := device/xiaomi/dipper-kernel/Image.gz-dtb
+else
+    LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
+
+PRODUCT_COPY_FILES += $(LOCAL_KERNEL):kernel
+
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/xiaomi/dipper/dipper-vendor.mk)
 
