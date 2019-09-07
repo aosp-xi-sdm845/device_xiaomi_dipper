@@ -14,5 +14,6 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/omni_dipper.mk
+PRODUCT_MAKEFILES := $(LOCAL_DIR)/aosip.mk
 
+COMMON_LUNCH_CHOICES := aosip_dipper-eng
